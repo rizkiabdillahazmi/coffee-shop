@@ -74,3 +74,13 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+// const element = document.querySelectorAll("#boxicon .bx");
+
+// document.getElementById('boxicon').addEventListener('mouseover', () => {
+//     element.classList.add("bx-tada");
+// });
+
+// document.getElementById('boxicon').addEventListener('mouseout', () => {
+//     element.classList.remove("bx-tada");
+// });
