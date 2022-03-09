@@ -11,6 +11,12 @@
                 <span class="text">Dashboard</span>
             </a>
         </li>
+        <li class="{{ $title === "Produk" ? 'active' :''}}">
+            <a href="/admin/produk">
+                <i class='bx bx-package'></i>
+                <span class="text">Produk</span>
+            </a>
+        </li>
         <li class="{{ $title === "Transaksi" ? 'active' :''}}">
             <a href="/admin/transaksi">
                 <i class='bx bx-transfer'></i>
@@ -19,26 +25,20 @@
         </li>
         <li>
             <a href="#">
-                <i class='bx bxs-shopping-bag-alt'></i>
-                <span class="text">My Store</span>
+                <i class='bx bxs-factory' ></i>
+                <span class="text">Inventory</span>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class='bx bxs-doughnut-chart'></i>
-                <span class="text">Analytics</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bxs-message-dots'></i>
-                <span class="text">Message</span>
+                <i class='bx bxs-user-rectangle'></i>
+                <span class="text">Karyawan</span>
             </a>
         </li>
         <li>
             <a href="#">
                 <i class='bx bxs-group'></i>
-                <span class="text">Team</span>
+                <span class="text">Member</span>
             </a>
         </li>
     </ul>

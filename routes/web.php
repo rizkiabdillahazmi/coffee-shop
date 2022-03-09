@@ -38,6 +38,11 @@ Route::prefix('admin')->group(function () {
             'title' => 'Dashboard',
         ]);
     });
+    Route::get('/produk', function () {
+        return view('admin.produk', [
+            'title' => 'Produk',
+        ]);
+    });
     Route::get('/transaksi', function () {
         return view('admin.transaksi', [
             'title' => 'Transaksi',
