@@ -19,7 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
+        'role',
         'password',
     ];
 
@@ -41,4 +43,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hasRole($role)
+    {
+        // check param $role dengan field usertype
+        if ($role == $this->role) {
+            return true;
+        }
+        return false;
+    }
 }

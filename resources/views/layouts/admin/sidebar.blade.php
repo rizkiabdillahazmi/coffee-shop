@@ -11,12 +11,14 @@
                 <span class="text">Dashboard</span>
             </a>
         </li>
+        @if (auth()->user()->role == 'admin')
         <li class="{{ $title === "Produk" ? 'active' :''}}">
             <a href="/admin/produk">
                 <i class='bx bx-package'></i>
                 <span class="text">Produk</span>
             </a>
         </li>
+        @endif
         <li class="{{ $title === "Transaksi" ? 'active' :''}}">
             <a href="/admin/transaksi">
                 <i class='bx bx-transfer'></i>
@@ -47,12 +49,6 @@
             <a href="#">
                 <i class='bx bxs-cog'></i>
                 <span class="text">Settings</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="logout">
-                <i class='bx bxs-log-out-circle'></i>
-                <span class="text">Logout</span>
             </a>
         </li>
     </ul>

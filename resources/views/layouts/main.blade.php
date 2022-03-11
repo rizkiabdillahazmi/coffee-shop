@@ -18,6 +18,18 @@
 
     @yield('content')
 
+    @if(session()->has('success'))
+    <script>
+        alert('{{ session('success') }}');
+    </script>
+    @endif
+
+    @if(session()->has('loginError'))
+    <script>
+        alert('{{ session('loginError') }}');
+    </script>
+    @endif
+
     @include('layouts.footer')
 </body>
 

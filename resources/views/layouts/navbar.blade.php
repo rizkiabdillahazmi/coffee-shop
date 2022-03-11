@@ -21,12 +21,24 @@
                     <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
                     <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
                 </svg>Promo</a>
-            <a href="/login" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                @if (Auth::check())
+                @if (auth()->user()->role == 'user')
+                <span class="text-teal-500 font-bold">Hello {{ auth()->user()->name }}</span>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="flex items-center"><span class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>Logout</span></button>
+                </form>
+                @endif
+                @else
+                <a href="/login" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                 </svg>Login</a>
-            <a href="/register" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <a href="/register" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>Daftar</a>
+                @endif
 
         </div>
     </div>
@@ -36,6 +48,9 @@
             <a href="/" class="py-2 hover:border-y-4 hover:border-t-transparent hover:border-b-teal-500 {{ $title === "Home" ? 'border-y-4 border-t-transparent border-b-teal-500':'' }}">Home</a>
             <a href="/produk" class="py-2 hover:border-y-4 hover:border-t-transparent hover:border-b-teal-500 {{ $title === "Produk" ? 'border-y-4 border-t-transparent border-b-teal-500':'' }}">Produk</a>
             <a href="/lokasi" class="py-2 hover:border-y-4 hover:border-t-transparent hover:border-b-teal-500 {{ $title === "Lokasi" ? 'border-y-4 border-t-transparent border-b-teal-500':'' }}">Lokasi</a>
+            @auth
+            <a href="/transaksi" class="py-2 hover:border-y-4 hover:border-t-transparent hover:border-b-teal-500 {{ $title === "Transaksi" ? 'border-y-4 border-t-transparent border-b-teal-500':'' }}">Transaksi</a>
+            @endauth
         </div>
         <div>
             <a href="" class="inline-block bg-teal-400 px-4 py-4 rounded-sm font-semibold hover:bg-teal-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
