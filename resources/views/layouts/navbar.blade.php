@@ -23,13 +23,18 @@
                 </svg>Promo</a>
                 @if (Auth::check())
                 @if (auth()->user()->role == 'user')
-                <span class="text-teal-500 font-bold">Hello {{ auth()->user()->name }}</span>
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="flex items-center"><span class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                    </svg>Logout</span></button>
-                </form>
+                <span class="text-black text-xs font-semibold">
+                    <a href="" class="text-teal-600 hover:text-teal-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>{{ auth()->user()->name }}
+                    </a>
+                    <form action="/logout" method="post" class="flex justify-end">
+                        @csrf
+                        <button type="submit" class="flex items-center"><span class="hover:text-red-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                        </svg>Logout</span></button>
+                    </form>
+                </span>
                 @endif
                 @else
                 <a href="/login" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
