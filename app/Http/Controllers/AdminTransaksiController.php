@@ -12,6 +12,9 @@ class AdminTransaksiController extends Controller
     {
         return view('admin.transaksi', [
             'title' => 'Transaksi',
+            'order_konfirmasi' => Invoice::where('status', '=', '1')->count(),
+            'order_proses' => Invoice::where('status', '=', '2')->count(),
+            'order_selesai' => Invoice::where('status', '=', '3')->count(),
             'transactions' => Invoice::join('users', 'user', '=', 'users.id')
                             ->orderBy('status', 'ASC')
                             ->select('users.name as nama', 'invoices.id as id', 'invoices.invoice as invoice', 'invoices.created_at as tanggal_order', 'invoices.status as status')

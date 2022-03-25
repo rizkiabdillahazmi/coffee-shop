@@ -32,7 +32,7 @@
             </div>
             <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12</span>
+                    <span class="font-bold text-2xl">{{ $discount_products }}</span>
                     <span class="mb-2 font-semibold">Produk Diskon</span>
                 </div>
                 <div class="p-4 bg-green-300 rounded-lg">

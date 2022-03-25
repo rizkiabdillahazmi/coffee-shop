@@ -21,7 +21,7 @@
         <div class="w-full mx-auto flex justify-start items-center gap-24">
             <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="font-bold text-2xl">{{ $order_konfirmasi }} Order</span>
                     <span class="mb-2 font-semibold">Butuh Konfirmasi</span>
                 </div>
                 <div class="p-4 bg-red-300 rounded-lg">
@@ -32,7 +32,7 @@
             </div>
             <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="font-bold text-2xl">{{ $order_proses }} Order</span>
                     <span class="mb-2 font-semibold">Sedang Diproses</span>
                 </div>
                 <div class="p-4 bg-yellow-300 rounded-lg">
@@ -43,7 +43,7 @@
             </div>
             <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="font-bold text-2xl">{{ $order_selesai }} Order</span>
                     <span class="mb-2 font-semibold">Selesai</span>
                 </div>
                 <div class="p-4 bg-green-300 rounded-lg">
