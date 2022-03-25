@@ -128,7 +128,7 @@
                             </form>
                             <form action="">
                                 <button
-                                    class="bg-green-600 py-2 px-2 rounded-md text-xs text-white font-bold flex items-center gap-1 bg">
+                                    class="bg-green-600 py-2 px-5 rounded-md text-xs text-white font-bold flex items-center gap-1 bg">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
