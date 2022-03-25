@@ -15,46 +15,54 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn-download">
-            <i class='bx bxs-cloud-download'></i>
-            <span class="text">Download PDF</span>
-        </a>
     </div>
 
-    <ul class="box-info">
-        <li>
-            <i class='bx bxs-calendar-check'></i>
-            <span class="text">
-                <h3>1020</h3>
-                <p>New Order</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-                <h3>2834</h3>
-                <p>Visitors</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-dollar-circle'></i>
-            <span class="text">
-                <h3>$2543</h3>
-                <p>Total Sales</p>
-            </span>
-        </li>
-    </ul>
+    <div class="box-info">
+        <div class="w-full mx-auto flex justify-start items-center gap-24">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="mb-2 font-semibold">Butuh Konfirmasi</span>
+                </div>
+                <div class="p-4 bg-red-300 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                      </svg>
+                </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="mb-2 font-semibold">Sedang Diproses</span>
+                </div>
+                <div class="p-4 bg-yellow-300 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl">12 Order</span>
+                    <span class="mb-2 font-semibold">Selesai</span>
+                </div>
+                <div class="p-4 bg-green-300 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="table-data">
         <div class="w-full mx-auto rounded-md overflow-hidden">
             <div class="px-4 py-4">
                 <div class="head">
                     <h3>Recent Orders</h3>
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-filter'></i>
                 </div>
                 <div
-                    class="grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
+                    class="mt-5 grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
                     <div>
                         User
                     </div>
@@ -75,7 +83,7 @@
                     </div>
                 </div>
                 @foreach ($transactions as $transaction)
-                <div class="dropdown__wrapper py-4 hover:bg-[#eee] rounded">
+                <div class="dropdown__wrapper py-4 rounded">
                     <div
                         class="dropdown__cell grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">

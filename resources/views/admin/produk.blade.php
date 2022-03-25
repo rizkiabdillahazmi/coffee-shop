@@ -15,35 +15,34 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn-download">
-            <i class='bx bxs-cloud-download'></i>
-            <span class="text">Download PDF</span>
-        </a>
     </div>
 
-    <ul class="box-info">
-        <li>
-            <i class='bx bx-package'></i>
-            <span class="text">
-                <h3>{{ $total_product }}</h3>
-                <p>Produk</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-                <h3>2834</h3>
-                <p>Pelanggan</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-dollar-circle'></i>
-            <span class="text">
-                <h3>Rp. 15000</h3>
-                <p>Total Penjualan</p>
-            </span>
-        </li>
-    </ul>
+    <div class="box-info">
+        <div class="w-full mx-auto flex justify-start items-center gap-24">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-blue-500 shadow-lg rounded-md w-80">
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl">{{ $total_product }}</span>
+                    <span class="mb-2 font-semibold">Total Produk</span>
+                </div>
+                <div class="p-4 bg-blue-300 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                      </svg>
+                </div>
+            </div>
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
+                <div class="flex flex-col">
+                    <span class="font-bold text-2xl">12</span>
+                    <span class="mb-2 font-semibold">Produk Diskon</span>
+                </div>
+                <div class="p-4 bg-green-300 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                      </svg>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="table-data">
         <div class="w-full mx-auto rounded-md overflow-hidden">
@@ -59,11 +58,9 @@
                 </div>
                 <div class="head">
                     <h3>Semua Produk</h3>
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-filter'></i>
                 </div>
                 <div
-                    class="grid grid-cols-[0.8fr_repeat(4,_0.5fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
+                    class="mt-5 grid grid-cols-[0.8fr_repeat(4,_0.5fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
                     <div>
                         Nama Produk
                     </div>
@@ -84,7 +81,7 @@
                     </div>
                 </div>
                 @foreach ($products as $product)
-                <div class="dropdown__wrapper py-4 hover:bg-slate-300 rounded">
+                <div class="dropdown__wrapper py-4 rounded">
                     <div
                         class="dropdown__cell grid grid-cols-[0.8fr_repeat(4,_0.5fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">

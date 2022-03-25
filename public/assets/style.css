@@ -418,19 +418,6 @@ body {
     pointer-events: unset;
 }
 
-#content main .head-title .btn-download {
-    height: 36px;
-    padding: 0 16px;
-    border-radius: 36px;
-    background: var(--teal);
-    color: var(--light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 10px;
-    font-weight: 500;
-}
-
 
 
 
@@ -439,53 +426,14 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 24px;
     margin-top: 36px;
-}
-
-#content main .box-info li {
     padding: 24px;
+    color: var(--dark);
     background: var(--light);
     border-radius: 20px;
     display: flex;
     align-items: center;
     grid-gap: 24px;
 }
-
-#content main .box-info li .bx {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    font-size: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#content main .box-info li:nth-child(1) .bx {
-    background: var(--light-teal);
-    color: var(--teal);
-}
-
-#content main .box-info li:nth-child(2) .bx {
-    background: var(--light-yellow);
-    color: var(--yellow);
-}
-
-#content main .box-info li:nth-child(3) .bx {
-    background: var(--light-orange);
-    color: var(--orange);
-}
-
-#content main .box-info li .text h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--dark);
-}
-
-#content main .box-info li .text p {
-    color: var(--dark);
-}
-
-
 
 #content main .add-product {
     display: flex;
@@ -530,6 +478,10 @@ body {
     overflow-x: auto;
 }
 
+.dropdown__wrapper:hover{
+    background: var(--grey);
+}
+
 #content main .table-data .head {
     display: flex;
     align-items: center;
@@ -542,70 +494,6 @@ body {
     font-size: 24px;
     font-weight: 600;
 }
-
-#content main .table-data .head .bx {
-    cursor: pointer;
-}
-
-#content main .table-data .order {
-    flex-grow: 1;
-    flex-basis: 500px;
-}
-
-#content main .table-data .order table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#content main .table-data .order table th {
-    padding-bottom: 12px;
-    font-size: 13px;
-    text-align: left;
-    border-bottom: 1px solid var(--grey);
-}
-
-#content main .table-data .order table td {
-    padding: 16px 0;
-}
-
-#content main .table-data .order table tr td:first-child {
-    display: flex;
-    align-items: center;
-    grid-gap: 12px;
-    padding-left: 6px;
-}
-
-#content main .table-data .order table td img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-#content main .table-data .order table tbody tr:hover {
-    background: var(--grey);
-}
-
-#content main .table-data .order table tr td .status {
-    font-size: 10px;
-    padding: 6px 16px;
-    color: var(--light);
-    border-radius: 20px;
-    font-weight: 700;
-}
-
-#content main .table-data .order table tr td .status.completed {
-    background: var(--teal);
-}
-
-#content main .table-data .order table tr td .status.process {
-    background: var(--yellow);
-}
-
-#content main .table-data .order table tr td .status.pending {
-    background: var(--orange);
-}
-
 
 #content main .table-data .todo {
     flex-grow: 1;
