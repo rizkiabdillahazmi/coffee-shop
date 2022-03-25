@@ -32,10 +32,10 @@
                         {{ $index + 1 }}
                     </div>
                     <div>
-                        {{ $transaction['invoice'] }}
+                        {{ $transaction->invoice }}
                     </div>
                     <div>
-                        {{ $transaction['created_at'] }}
+                        {{ $transaction->created_at }}
                     </div>
                     <div>
                         @if ($transaction->status == 1)
