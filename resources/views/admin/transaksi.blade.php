@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 @foreach ($transactions as $transaction)
-                <div class="dropdown__wrapper py-4 hover:bg-slate-300 rounded">
+                <div class="dropdown__wrapper py-4 hover:bg-[#eee] rounded">
                     <div
                         class="dropdown__cell grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">

@@ -526,6 +526,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-20 {
   margin-top: 5rem;
 }
+.mr-0 {
+  margin-right: 0px;
+}
 .block {
   display: block;
 }
@@ -683,6 +686,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid-cols-\[repeat\(2\2c _0\.8fr\)_0\.6fr_repeat\(2\2c _0\.6fr\)_0\.8fr\] {
   grid-template-columns: repeat(2, 0.8fr) 0.6fr repeat(2, 0.6fr) 0.8fr;
+}
+.grid-cols-\[_0\.8fr_repeat\(4\2c _0\.5fr\)_0\.8fr\] {
+  grid-template-columns: 0.8fr repeat(4, 0.5fr) 0.8fr;
+}
+.grid-cols-\[0\.8fr_repeat\(4\2c _0\.5fr\)_0\.8fr\] {
+  grid-template-columns: 0.8fr repeat(4, 0.5fr) 0.8fr;
 }
 .flex-row {
   flex-direction: row;
@@ -871,6 +880,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-transparent {
   background-color: transparent;
+}
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1118,6 +1139,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-slate-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#FFF2C6\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 242 198 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#eee\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
 }
 .hover\:text-teal-500:hover {
   --tw-text-opacity: 1;
