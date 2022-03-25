@@ -9,6 +9,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 	<title>Admin | Coffee Shop</title>
 </head>
@@ -25,7 +26,7 @@
 		@include('layouts.admin.navbar')
 
         @yield('content')
-		
+
 	</section>
 	<!-- CONTENT -->
 

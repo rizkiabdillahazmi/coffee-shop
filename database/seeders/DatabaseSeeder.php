@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -37,7 +38,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'User',
+            'name' => 'Rizki Abdillah Azmi',
             'username' => 'user',
             'email' => 'user@gmail.com',
             'role' => 'user',
@@ -47,5 +48,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory(5)->create();
+
+        $this->call([
+            ProductSeeder::class,
+            InvoiceSeeder::class,
+        ]);
     }
 }

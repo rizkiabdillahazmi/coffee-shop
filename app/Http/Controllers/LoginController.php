@@ -30,9 +30,9 @@ class LoginController extends Controller
             if (auth()->user()->role == 'admin') {
                 return redirect('/admin');
             }
-            if (auth()->user()->role == 'karyawan') {
-                return redirect('/admin');
-            }
+            // if (auth()->user()->role == 'karyawan') {
+            //     return redirect('/admin');
+            // }
         }
 
         return back()->with('loginError', 'Login Failed !');

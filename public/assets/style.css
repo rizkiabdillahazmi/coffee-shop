@@ -487,7 +487,32 @@ body {
 
 
 
+#content main .add-product {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+}
 
+#content main .add-product>div {
+    border-radius: 10px;
+    background: var(--teal);
+    padding: 10px 15px;
+    overflow-x: auto;
+}
+
+#content main .add-product>div:hover {
+    background: #008080;
+    color: var(--dark);
+}
+
+#content main .add-product>div>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    grid-gap: 10px;
+    font-weight: 500;
+}
 
 #content main .table-data {
     display: flex;

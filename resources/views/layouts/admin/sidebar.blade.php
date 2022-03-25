@@ -27,6 +27,12 @@
         </li>
         <li>
             <a href="#">
+                <i class='bx bxs-group'></i>
+                <span class="text">Promo</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
                 <i class='bx bxs-factory' ></i>
                 <span class="text">Inventory</span>
             </a>

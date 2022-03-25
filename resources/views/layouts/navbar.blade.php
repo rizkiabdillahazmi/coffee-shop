@@ -17,13 +17,12 @@
         </div>
         <!-- Promo, Login, Daftar -->
         <div class="flex justify-center items-center space-x-8 py-4">
-            <a href="/" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            {{-- <a href="/" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
                     <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
-                </svg>Promo</a>
-                @if (Auth::check())
-                @if (auth()->user()->role == 'user')
-                <span class="text-black text-xs font-semibold">
+                </svg>Promo</a> --}}
+                @auth
+                <span class="text-black  font-semibold flex gap-4">
                     <a href="" class="text-teal-600 hover:text-teal-400">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>{{ auth()->user()->name }}
@@ -35,16 +34,15 @@
                         </svg>Logout</span></button>
                     </form>
                 </span>
-                @endif
-                @else
+                @endauth
+                @guest
                 <a href="/login" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                 </svg>Login</a>
                 <a href="/register" class="hover:text-teal-500 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>Daftar</a>
-                @endif
-
+                @endguest
         </div>
     </div>
     <!-- Nav 2 -->
@@ -58,9 +56,9 @@
             @endauth
         </div>
         <div>
-            <a href="" class="inline-block bg-teal-400 px-4 py-4 rounded-sm font-semibold hover:bg-teal-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <a href="/cart" class="inline-block bg-teal-400 px-4 py-4 rounded-sm font-semibold hover:bg-teal-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                </svg>Keranjang</a>
+                </svg>Keranjang <div class="inline-flex rounded-full bg-red-400 w-5 h-5 align-middle items-center justify-center"><span>0</span></div></a>
         </div>
     </div>
 </nav>
