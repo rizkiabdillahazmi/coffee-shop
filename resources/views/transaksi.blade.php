@@ -25,7 +25,7 @@
                 </div>
             </div>
             @foreach ($transactions as $index => $transaction)
-            <div class="dropdown__wrapper py-4 odd:bg-slate-200">
+            <div class="dropdown__wrapper py-4 even:bg-white odd:bg-slate-200">
                 <div
                     class="dropdown__cell grid grid-cols-[0.2fr_repeat(3,_1fr)_0.4fr] justify-items-center items-center px-4">
                     <div>
