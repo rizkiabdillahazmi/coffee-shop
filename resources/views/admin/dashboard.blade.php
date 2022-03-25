@@ -63,29 +63,105 @@
                       </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
-                <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
-                    <span class="mb-2 font-semibold">Sedang Diproses</span>
-                </div>
-                <div class="p-4 bg-yellow-300 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                </div>
-            </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
-                <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
-                    <span class="mb-2 font-semibold">Selesai</span>
-                </div>
-                <div class="p-4 bg-green-300 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                </div>
-            </div>
         </div>
+    </div>
+
+    {{-- Chart --}}
+    <div class="box-info">
+        <div class="shadow-lg rounded-lg overflow-hidden">
+            <div class="py-3 px-5 bg-gray-50">Radar chart</div>
+            <canvas class="p-10" id="chartRadar"></canvas>
+          </div>
+          
+          <!-- Required chart.js -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <!-- Chart radar -->
+          <script>
+            const dataRadar = {
+              labels: [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running",
+              ],
+              datasets: [
+                {
+                  label: "My First Dataset",
+                  data: [65, 59, 90, 81, 56, 55, 40],
+                  fill: true,
+                  backgroundColor: "rgba(133, 105, 241, 0.2)",
+                  borderColor: "rgb(133, 105, 241)",
+                  pointBackgroundColor: "rgb(133, 105, 241)",
+                  pointBorderColor: "#fff",
+                  pointHoverBackgroundColor: "#fff",
+                  pointHoverBorderColor: "rgb(133, 105, 241)",
+                },
+                {
+                  label: "My Second Dataset",
+                  data: [28, 48, 40, 19, 96, 27, 100],
+                  fill: true,
+                  backgroundColor: "rgba(54, 162, 235, 0.2)",
+                  borderColor: "rgb(54, 162, 235)",
+                  pointBackgroundColor: "rgb(54, 162, 235)",
+                  pointBorderColor: "#fff",
+                  pointHoverBackgroundColor: "#fff",
+                  pointHoverBorderColor: "rgb(54, 162, 235)",
+                },
+              ],
+            };
+          
+            const configRadarChart = {
+              type: "radar",
+              data: dataRadar,
+              options: {},
+            };
+          
+            var chartBar = new Chart(
+              document.getElementById("chartRadar"),
+              configRadarChart
+            );
+          </script>
+          <div class="shadow-lg rounded-lg overflow-hidden">
+            <div class="py-3 px-5 bg-gray-50">Doughnut chart</div>
+            <canvas class="p-10" id="chartDoughnut"></canvas>
+          </div>
+          
+          <!-- Required chart.js -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <!-- Chart doughnut -->
+          <script>
+            const dataDoughnut = {
+              labels: ["JavaScript", "Python", "Ruby"],
+              datasets: [
+                {
+                  label: "My First Dataset",
+                  data: [300, 50, 100],
+                  backgroundColor: [
+                    "rgb(133, 105, 241)",
+                    "rgb(164, 101, 241)",
+                    "rgb(101, 143, 241)",
+                  ],
+                  hoverOffset: 4,
+                },
+              ],
+            };
+          
+            const configDoughnut = {
+              type: "doughnut",
+              data: dataDoughnut,
+              options: {},
+            };
+          
+            var chartBar = new Chart(
+              document.getElementById("chartDoughnut"),
+              configDoughnut
+            );
+          </script>
     </div>
 </main>
 <!-- MAIN -->
