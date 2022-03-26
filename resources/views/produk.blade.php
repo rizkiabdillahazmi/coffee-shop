@@ -34,9 +34,14 @@
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $signature->nama }}</a>
                         <span class="text-teal-600 text-lg font-bold">Rp. {{ $signature->harga-$signature->harga*$signature->diskon }}</span>
-                        <a href="" class="mt-4 inline-block bg-teal-200 px-2 py-2 rounded-md font-semibold hover:bg-teal-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
+                        <form action="{{ url('addcart', $signature->id) }}" method="POST">
+                            @csrf
+                            <button id="tes" class="px-3 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Add Cart</button>
+                        </form>
+                        {{-- <button class="px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Add Cart</button> --}}
+                        {{-- <a href="" class="mt-4 inline-block bg-teal-200 px-2 py-2 rounded-md font-semibold hover:bg-teal-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                            </svg>Add to Cart</a>
+                            </svg>Add to Cart</a> --}}
                     </div>
                 </div>
                 @endforeach

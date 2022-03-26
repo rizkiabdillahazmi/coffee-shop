@@ -18,6 +18,7 @@ Route::prefix('/')->group(function () {
     Route::get('/lokasi', [HomeController::class, 'lokasi']);
     Route::get('/transaksi', [TransaksiController::class, 'indexUser'])->middleware('auth');
     Route::get('/cart', [CartController::class, 'index'])->middleware('auth');
+    Route::post('/addcart/{id}', [CartController::class, 'addCart'])->middleware('auth');
 
     Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 

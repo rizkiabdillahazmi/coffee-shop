@@ -22,7 +22,7 @@ const swiper = new Swiper(".mySwiper", {
 
 const productSwiper = new Swiper('.productSwiper', {
     slidesPerView: 4,
-    direction: getDirection(),
+    // direction: getDirection(),
     navigation: {
       nextEl: '.swiper-button-next1',
       prevEl: '.swiper-button-prev1',
@@ -34,9 +34,9 @@ const productSwiper = new Swiper('.productSwiper', {
     },
   });
 
-  function getDirection() {
-    var windowWidth = window.innerWidth;
-    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+function getDirection() {
+  var windowWidth = window.innerWidth;
+  var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
 
-    return direction;
-  }
+  return direction;
+}
