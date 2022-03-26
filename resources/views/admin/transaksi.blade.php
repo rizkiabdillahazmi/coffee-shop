@@ -79,7 +79,7 @@
                         Rincian Order
                     </div>
                     <div>
-                        Aksi
+                        Pesanan
                     </div>
                 </div>
                 @foreach ($transactions as $transaction)
