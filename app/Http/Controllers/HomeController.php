@@ -15,18 +15,6 @@ class HomeController extends Controller
         ]);
     }
 
-    public function produk()
-    {
-        return view('produk', [
-            'title' => 'Produk',
-            'signatures' => Product::where('signature',  1)->get(),
-            'coffees' => Product::where('kategori',  'Minuman')->where('jenis', 'Coffee')->get(),
-            'non_coffees' => Product::where('kategori',  'Minuman')->where('jenis', 'Non-Coffee')->get(),
-            'snacks' => Product::where('kategori',  'Makanan')->where('jenis', 'Makanan Ringan')->get(),
-            'daily_foods' => Product::where('kategori',  'Makanan')->where('jenis', 'Makanan Berat')->get(),
-        ]);
-    }
-
     public function lokasi()
     {
         return view('lokasi', [
@@ -34,10 +22,10 @@ class HomeController extends Controller
         ]);
     }
 
-    public function keranjang()
+    public function admin()
     {
-        return view('keranjang', [
-            'title' => 'Keranjang',
+        return view('admin.dashboard', [
+            'title' => 'Dashboard',
         ]);
     }
 }

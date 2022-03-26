@@ -8,6 +8,8 @@ class CartController extends Controller
 {
     public function index()
     {
-        return "Ini Cart";
+        return view('keranjang', [
+            'title' => 'Keranjang',
+        ]);
     }
 }

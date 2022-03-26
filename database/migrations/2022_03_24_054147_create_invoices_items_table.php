@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('invoices_items', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('invoice_id');
-            $table->bigInteger('product_id');
+            $table->foreignId('invoice_id');
+            $table->foreignId('product_id');
             $table->integer('jumlah');
             $table->decimal('sub_total');
             $table->timestamps();

@@ -19,17 +19,17 @@ class InvoiceSeeder extends Seeder
         static $order = 1;
         $invoices = [
             [
-                'user' => 3,
+                'user_id' => 3,
                 'invoice' => 'INV/'.date('dmY/His').'/'.'3'.'/'.$order++,
                 'status' => 3,
             ],
             [
-                'user' => 4,
+                'user_id' => 4,
                 'invoice' => 'INV/'.date('dmY/His').'/'.'4'.'/'.$order++,
                 'status' => 3,
             ],
             [
-                'user' => 3,
+                'user_id' => 3,
                 'invoice' => 'INV/'.date('dmY/His').'/'.'3'.'/'.$order++,
             ],
         ];

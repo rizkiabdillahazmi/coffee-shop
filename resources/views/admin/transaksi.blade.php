@@ -87,7 +87,7 @@
                     <div
                         class="dropdown__cell grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">
-                            <img class="rounded-full w-9 h-9 border-2 border-teal-500"
+                            <img class="rounded-full w-9 h-9 border-2 border-teal-500 md:w-6 md:h-6 md:border"
                                 src="{{ asset('img/avatar.svg') }}">
                             <span>{{ $transaction->nama }}</span>
                         </div>
@@ -99,14 +99,14 @@
                         </div>
                         <div>
                             @if ($transaction->status == 1)
-                            <span class="bg-red-400 py-2 px-4 rounded-full text-xs font-bold text-white">Butuh
+                            <span class="bg-red-400 py-2 px-4 font-semibold rounded-full text-xs text-white">Butuh
                                 Konfirmasi</span>
                             @elseif ($transaction->status == 2)
-                            <span class="bg-yellow-500 py-2 px-4 rounded-full text-xs font-bold text-white">Sedang
+                            <span class="bg-yellow-500 py-2 px-4 font-semibold rounded-full text-xs text-white">Sedang
                                 Diproses</span>
                             @elseif ($transaction->status == 3)
                             <span
-                                class="bg-green-600 py-2 px-4 rounded-full text-xs font-bold text-white">Selesai</span>
+                                class="bg-green-600 py-2 px-4 font-semibold rounded-full text-xs text-white">Selesai</span>
                             @endif
                         </div>
                         <div class="button-show cursor-pointer" onclick="expandCell(this,event)">

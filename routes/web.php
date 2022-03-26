@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\TransaksiController;
@@ -13,9 +14,9 @@ use App\Http\Controllers\AdminTransaksiController;
 // Cara 1 :
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
-    Route::get('/produk', [HomeController::class, 'produk']);
+    Route::get('/produk', [ProdukController::class, 'produk']);
     Route::get('/lokasi', [HomeController::class, 'lokasi']);
-    Route::get('/transaksi', [TransaksiController::class, 'index'])->middleware('auth');
+    Route::get('/transaksi', [TransaksiController::class, 'indexUser'])->middleware('auth');
     Route::get('/cart', [CartController::class, 'index'])->middleware('auth');
 
     Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
@@ -32,9 +33,9 @@ Route::prefix('/')->group(function () {
 // });
 
 Route::middleware('admin')->prefix('admin')->group(function () {
-    Route::get('/', [AdminHomeController::class, 'index']);
-    Route::get('/produk', [AdminProdukController::class, 'index']);
-    Route::get('/transaksi', [AdminTransaksiController::class, 'index']);
+    Route::get('/', [HomeController::class, 'admin']);
+    Route::get('/produk', [ProdukController::class, 'produkAdmin']);
+    Route::get('/transaksi', [TransaksiController::class, 'indexAdmin']);
 });
 
 // Route::middleware(['auth', 'role:karyawan'])->prefix('admin')->group(function () {

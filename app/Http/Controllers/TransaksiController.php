@@ -9,18 +9,25 @@ use Illuminate\Support\Facades\DB;
 
 class TransaksiController extends Controller
 {
-    public function index()
+    public function indexUser()
     {
         $user_id = Auth::user()->id ;
         return view('transaksi', [
             'title' => 'Transaksi',
-            'transactions' => Invoice::orderBy('status', 'ASC')->where('user', $user_id)->get(),
-            'transaction_details' => DB::table('invoices')
-                                ->join('invoices_items', 'invoices.id', '=', 'invoices_items.invoice_id')
-                                ->join('products', 'invoices_items.product_id', '=', 'products.id')
-                                ->select('invoices_items.invoice_id as id', 'products.nama as nama', 'products.gambar as gambar', 'jumlah', 'sub_total')
-                                ->where('user', $user_id)
-                                ->get(),
+            'transactions' => Invoice::getTransactions($user_id),
+            'transaction_details' => Invoice::getTransactionDetails($user_id),
+        ]);
+    }
+
+    public function indexAdmin()
+    {
+        return view('admin.transaksi', [
+            'title' => 'Transaksi',
+            'order_konfirmasi' => Invoice::getOrdersByStatus('1'),
+            'order_proses' => Invoice::getOrdersByStatus('2'),
+            'order_selesai' => Invoice::getOrdersByStatus('3'),
+            'transactions' => Invoice::getTransactions(),
+            'transaction_details' => Invoice::getTransactionDetails(),
         ]);
     }
 }
