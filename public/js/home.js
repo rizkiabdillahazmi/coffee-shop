@@ -17,6 +17,7 @@ window.addEventListener('load', function(){
         slidesToShow: 4,
         slidesToScroll: 1,
         draggable: true,
+        duration: 3,
         dots: '.dots',
         arrows: {
             prev: '#btn-prev-promo',

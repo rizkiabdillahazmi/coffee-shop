@@ -32,7 +32,7 @@ class CartController extends Controller
         // $cart->save();
 
         if (Cart::where('user_id', '=', $user_id)->where('product_id', '=', $id)->exists()) {
-            return back()->with('gagal','Produk telah ada di keranjang');
+            return back()->with('gagal','Ops! Produk yang dipilih sudah ada di keranjang');
         }
 
         $cart = Cart::create([
@@ -60,5 +60,14 @@ class CartController extends Controller
             'title' => 'Keranjang',
             'carts' => $carts,
         ]);
+    }
+
+    public function deleteCart($product_id)
+    {
+        $user_id = auth()->user()->id;
+        $affectedRows = Cart::where('user_id', $user_id)->where('product_id', $product_id)->delete();
+        if($affectedRows){
+            return back()->with('sukses','Produk berhasil dihapus dari keranjang');
+        }
     }
 }
