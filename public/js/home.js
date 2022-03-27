@@ -19,8 +19,8 @@ window.addEventListener('load', function(){
         draggable: true,
         dots: '.dots',
         arrows: {
-            prev: '#btn-prev',
-            next: '#btn-next'
+            prev: '#btn-prev-promo',
+            next: '#btn-next-promo'
         }
     })
 });

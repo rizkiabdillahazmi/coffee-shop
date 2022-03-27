@@ -18,6 +18,10 @@ class CartController extends Controller
     public function addCart(Request $request, $id)
     {
         $user_id = auth()->user()->id;
+        $harga = Product::find($id)->harga;
+        $diskon = Product::find($id)->diskon;
+        $sub_total = $harga - ($harga * $diskon);
+
         // $product = Product::find($id);
         
         // $cart =new Cart;
@@ -27,23 +31,32 @@ class CartController extends Controller
         // $cart->sub_total =12000;
         // $cart->save();
 
+        if (Cart::where('user_id', '=', $user_id)->where('product_id', '=', $id)->exists()) {
+            return back()->with('gagal','Produk telah ada di keranjang');
+        }
+
         $cart = Cart::create([
             'user_id' => $user_id,
             'product_id' => $id,
             'jumlah' => 1,
-            'sub_total' => 12000,
+            'sub_total' => $sub_total,
         ]);
 
         if($cart){
-            return redirect('/produk');
+            return back()->with('sukses','Produk berhasil ditambahkan ke dalam keranjang');
+            // return redirect('/produk')->with('sukses','Produk berhasil ditambahkan ke dalam keranjang');
         }
     }
 
     public function cartDetail()
     {
         $user_id = auth()->user()->id;
-        $carts = Cart::where('user_id', $user_id)->get();
-        return view('cart-details', [
+        $carts = Cart::where('user_id', $user_id)
+                        ->join('users', 'carts.user_id', '=', 'users.id')
+                        ->join('products', 'carts.product_id', '=', 'products.id')
+                        ->select('products.gambar as gambar_produk', 'products.nama as nama_produk', 'products.diskon as diskon', 'products.harga as harga', 'jumlah', 'sub_total', 'product_id')
+                        ->get();
+        return view('keranjang', [
             'title' => 'Keranjang',
             'carts' => $carts,
         ]);

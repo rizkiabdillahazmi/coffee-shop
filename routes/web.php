@@ -6,10 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\AdminProdukController;
-use App\Http\Controllers\AdminTransaksiController;
 
 // Cara 1 :
 Route::prefix('/')->group(function () {
@@ -17,7 +14,7 @@ Route::prefix('/')->group(function () {
     Route::get('/produk', [ProdukController::class, 'produk']);
     Route::get('/lokasi', [HomeController::class, 'lokasi']);
     Route::get('/transaksi', [TransaksiController::class, 'indexUser'])->middleware('auth');
-    Route::get('/cart', [CartController::class, 'index'])->middleware('auth');
+    Route::get('/cart', [CartController::class, 'cartDetail'])->middleware('auth');
     Route::post('/addcart/{id}', [CartController::class, 'addCart'])->middleware('auth');
 
     Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
@@ -25,8 +22,6 @@ Route::prefix('/')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
     Route::post('/login', [LoginController::class, 'authenticate']);
     Route::post('/logout', [LoginController::class, 'logout']);
-
-    Route::view('/about', 'about');
 });
 
 // Route::middleware(['auth', 'role:user'])->prefix('/')->group(function () {

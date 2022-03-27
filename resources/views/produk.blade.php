@@ -4,6 +4,7 @@
 <section class="max-w-full bg-stone-100 mt-[8rem]">
     <!-- Kategori -->
     <div class="max-w-screen-xl mx-auto px-4">
+        @include('notifikasi')
         <span class="block font-medium text-teal-600">Belanja Yuk</span>
         <span class="block text-2xl font-bold">Kategori</span>
         <div class="mt-6 flex justify-start space-x-8">
@@ -34,12 +35,14 @@
                                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </span>
+                            @if ($signature->diskon > 0)
+                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $signature->diskon*100 }} %</div>
+                            @endif
                             <img src="{{ $signature->gambar }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $signature->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">Rp.
-                            {{ $signature->harga-$signature->harga*$signature->diskon }}</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($signature->harga-$signature->harga*$signature->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $signature->id) }}" method="POST">
                                 @csrf
@@ -96,12 +99,14 @@
                                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </span>
+                            @if ($coffee->diskon > 0)
+                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $coffee->diskon*100 }} %</div>
+                            @endif
                             <img src="{{ $coffee->gambar }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $coffee->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">Rp.
-                            {{ $coffee->harga-$coffee->harga*$coffee->diskon }}</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($coffee->harga-$coffee->harga*$coffee->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $coffee->id) }}" method="POST">
                                 @csrf
@@ -153,12 +158,14 @@
                                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </span>
+                            @if ($non_coffee->diskon > 0)
+                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $non_coffee->diskon*100 }} %</div>
+                            @endif
                             <img src="{{ $non_coffee->gambar }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $non_coffee->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">Rp.
-                            {{ $non_coffee->harga-$non_coffee->harga*$non_coffee->diskon }}</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($non_coffee->harga-$non_coffee->harga*$non_coffee->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $non_coffee->id) }}" method="POST">
                                 @csrf
@@ -215,12 +222,14 @@
                                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </span>
+                            @if ($snack->diskon > 0)
+                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $snack->diskon*100 }} %</div>
+                            @endif
                             <img src="{{ $snack->gambar }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $snack->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">Rp.
-                            {{ $snack->harga-$snack->harga*$snack->diskon }}</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($snack->harga-$snack->harga*$snack->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $snack->id) }}" method="POST">
                                 @csrf
@@ -272,12 +281,14 @@
                                         d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </span>
+                            @if ($daily_food->diskon > 0)
+                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $daily_food->diskon*100 }} %</div>
+                            @endif
                             <img src="{{ $daily_food->gambar }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $daily_food->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">Rp.
-                            {{ $daily_food->harga-$daily_food->harga*$daily_food->diskon }}</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($daily_food->harga-$daily_food->harga*$daily_food->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $daily_food->id) }}" method="POST">
                                 @csrf

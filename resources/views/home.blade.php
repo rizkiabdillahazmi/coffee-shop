@@ -5,6 +5,7 @@
 <section class="max-w-full bg-stone-100 mt-[7rem]">
     <!-- Slider -->
     <div class="mt-36 max-w-screen-xl w-screen mx-auto mb-10">
+        @include('notifikasi')
         <div class="relative">
             <div class="jumbotron border-8 rounded-md border-white">
                 <div>
@@ -55,8 +56,8 @@
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $product->nama }}</a>
-                        <span class="text-red-500 text-lg font-semibold line-through">Rp. {{ $product->harga }}</span>
-                        <span class="text-teal-600 text-lg font-bold">Rp. {{ $product->harga-$product->harga*$product->diskon }}</span>
+                        <span class="text-red-500 text-lg font-semibold line-through">@money($product->harga)</span>
+                        <span class="text-teal-600 text-lg font-bold">@money($product->harga-$product->harga*$product->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $product->id) }}" method="POST">
                                 @csrf
@@ -73,22 +74,22 @@
                 @endforeach
             </div>
 
-            {{-- <div>
-                <button id="btn-next"
-                    class="absolute block rounded-[50%] p-2 bg-teal-400 top-[50%] right-5 -translate-y-[50%] translate-x-[50%] shadow z-10 hover:bg-teal-500"><svg
+            <div>
+                <button id="btn-next-promo"
+                    class="absolute block rounded-[50%] p-2 bg-green-400 top-[50%] right-5 -translate-y-[50%] translate-x-[50%] shadow z-10 hover:bg-green-500"><svg
                         xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
-                <button id="btn-prev"
-                    class="absolute block rounded-[50%] p-2 bg-teal-400 top-[50%] left-5 -translate-y-[50%] -translate-x-[50%] shadow z-10 hover:bg-teal-500"><svg
+                <button id="btn-prev-promo"
+                    class="absolute block rounded-[50%] p-2 bg-green-400 top-[50%] left-5 -translate-y-[50%] -translate-x-[50%] shadow z-10 hover:bg-green-500"><svg
                         xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
-            </div> --}}
+            </div>
 
         </div>
 
