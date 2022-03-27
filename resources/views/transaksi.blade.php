@@ -99,4 +99,5 @@
 </section>
 
 <script src="{{ asset('js/dropdown-table.js') }}"></script>
+
 @endsection

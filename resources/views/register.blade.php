@@ -14,27 +14,27 @@
             <div class="mt-4">
                 <div>
                     <label class="block" for="Name">Nama<label>
-                            <input type="text" placeholder="Nama" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="text" placeholder="Nama" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                 </div>
                 <div class="mt-4">
                     <label class="block" for="email">Email<label>
-                            <input type="text" placeholder="Email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="text" placeholder="Email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                 </div>
                 <div class="mt-4">
                     <label class="block">Password<label>
-                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                 </div>
                 <div class="mt-4">
                     <label class="block">Konfirmasi Password<label>
-                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                 </div>
                 <span class="text-xs text-red-400">Password harus sama!</span>
                 <div class="flex">
-                    <button class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Buat Akun</button>
+                    <button class="w-full px-6 py-2 mt-4 text-white bg-green-600 rounded-lg hover:bg-green-700 font-bold">Buat Akun</button>
                 </div>
                 <div class="mt-6 text-grey-dark">
                     Sudah Punya Akun?
-                    <a class="text-blue-600 hover:underline" href="/login">
+                    <a class="text-green-600 hover:underline" href="/login">
                         Log in
                     </a>
                 </div>

@@ -182,6 +182,7 @@
         </div>
     </div>
 </main>
+
 <script src="{{ asset('js/dropdown-table.js') }}"></script>
 <!-- MAIN -->
 @endsection

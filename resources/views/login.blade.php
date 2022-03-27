@@ -16,18 +16,18 @@
             <div class="mt-4 w-96">
                 <div>
                     <label class="block" for="email">Email<label>
-                            <input type="text" placeholder="Email" name="email" autofocus required value="{{ old('email') }}" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="text" placeholder="Email" name="email" autofocus required value="{{ old('email') }}" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                             @error('email')
                                 <span class="text-xs tracking-wide text-red-600">{{ $message }}</span>
                             @enderror
                 </div>
                 <div class="mt-4">
                     <label class="block" for="password">Password<label>
-                            <input type="password" placeholder="Password" name="password" required class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" placeholder="Password" name="password" required class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
                 </div>
                 <div class="flex items-baseline justify-between">
-                    <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
-                    <a href="#" class="text-sm text-blue-600 hover:underline">Lupa Password?</a>
+                    <button class="px-6 py-2 mt-4 text-white font-bold bg-green-600 rounded-lg hover:bg-green-700">Login</button>
+                    <a href="#" class="text-sm text-green-600 hover:underline">Lupa Password?</a>
                 </div>
             </div>
         </form>
