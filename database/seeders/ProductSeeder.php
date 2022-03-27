@@ -51,6 +51,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Coffee',
                 'signature' => 1,
                 'harga' => 18000,
+                'diskon' => 0.2,
             ],
             [
                 'nama' => 'Es Kopi Aren',
@@ -87,6 +88,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Non-Coffee',
                 'signature' => 0,
                 'harga' => 15000,
+                'diskon' => 0.2,
             ],
             [
                 'nama' => 'Matcha',
@@ -103,6 +105,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Non-Coffee',
                 'signature' => 0,
                 'harga' => 15000,
+                'diskon' => 0.2,
             ],
             [
                 'nama' => 'Strawberry',
@@ -128,6 +131,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Makanan Ringan',
                 'signature' => 0,
                 'harga' => 18000,
+                'diskon' => 0.2,
             ],
             [
                 'nama' => 'Bento',
@@ -136,6 +140,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Makanan Ringan',
                 'signature' => 0,
                 'harga' => 12000,
+                'diskon' => 0.1,
             ],
             [
                 'nama' => 'Tempe Mendoan',
@@ -169,6 +174,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Makanan Berat',
                 'signature' => 0,
                 'harga' => 19000,
+                'diskon' => 0.2,
             ],
             [
                 'nama' => 'Nasi Ayam Penyet',
@@ -185,6 +191,7 @@ class ProductSeeder extends Seeder
                 'jenis' => 'Makanan Berat',
                 'signature' => 0,
                 'harga' => 14000,
+                'diskon' => 0.1,
             ],
             [
                 'nama' => 'Mie Tiaw',
