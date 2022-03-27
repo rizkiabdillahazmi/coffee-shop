@@ -4,6 +4,13 @@
 {{-- {{ dd($carts) }} --}}
 <section class="max-w-full bg-stone-100 mt-[8rem] min-h-screen">
     <div class="max-w-screen-xl mx-auto">
+        <div class="relative">
+            <div
+                class="fixed z-50 bg-[#eee] left-0 right-0 top-0 bottom-0 opacity-90 max-w-screen-xl mx-auto max-h-fit my-auto rounded-lg">
+                <div class="text-2xl text-center mt-10 font-bold">Detail Pesanan</div>
+                <div>Konfirmasi</div>
+            </div>
+        </div>
         @include('notifikasi')
         <span class="block text-2xl font-bold text-teal-600 mb-8">Keranjang Belanja</span>
         <div class="w-full mx-auto">
