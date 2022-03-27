@@ -54,7 +54,7 @@ class CartController extends Controller
         $carts = Cart::where('user_id', $user_id)
                         ->join('users', 'carts.user_id', '=', 'users.id')
                         ->join('products', 'carts.product_id', '=', 'products.id')
-                        ->select('products.gambar as gambar_produk', 'products.nama as nama_produk', 'products.diskon as diskon', 'products.harga as harga', 'jumlah', 'sub_total', 'product_id')
+                        ->select('products.gambar as gambar_produk', 'products.nama as nama_produk', 'products.diskon as diskon', 'products.harga as harga', 'carts.id as id', 'jumlah', 'sub_total', 'product_id')
                         ->get();
         return view('keranjang', [
             'title' => 'Keranjang',
@@ -68,6 +68,16 @@ class CartController extends Controller
         $affectedRows = Cart::where('user_id', $user_id)->where('product_id', $product_id)->delete();
         if($affectedRows){
             return back()->with('sukses','Produk berhasil dihapus dari keranjang');
+        }
+    }
+
+    public function updateJumlah(Request $request, $id)
+    {
+        $affectedRows = Cart::where('id', $id)->update([
+            'jumlah' => $request->jumlah,
+        ]);
+        if($affectedRows){
+            return back()->with('sukses','Jumlah Produk berhasil diupdate');
         }
     }
 }

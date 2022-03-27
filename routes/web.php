@@ -17,6 +17,7 @@ Route::prefix('/')->group(function () {
     Route::get('/cart', [CartController::class, 'cartDetail'])->middleware('auth');
     Route::post('/addcart/{id}', [CartController::class, 'addCart'])->middleware('auth');
     Route::post('/deletecart/{id}', [CartController::class, 'deleteCart'])->middleware('auth');
+    Route::post('/updatejumlah/{id}', [CartController::class, 'updatejumlah'])->middleware('auth');
 
     Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
