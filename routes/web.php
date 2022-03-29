@@ -14,12 +14,14 @@ Route::prefix('/')->group(function () {
     Route::get('/produk', [ProdukController::class, 'produk']);
     Route::get('/lokasi', [HomeController::class, 'lokasi']);
     Route::get('/transaksi', [TransaksiController::class, 'indexUser'])->middleware('auth');
+    Route::post('/transaksi/{id}', [TransaksiController::class, 'addTransaction'])->middleware('auth');
     Route::get('/cart', [CartController::class, 'cartDetail'])->middleware('auth');
     Route::post('/addcart/{id}', [CartController::class, 'addCart'])->middleware('auth');
     Route::post('/deletecart/{id}', [CartController::class, 'deleteCart'])->middleware('auth');
     Route::post('/updatejumlah/{id}', [CartController::class, 'updatejumlah'])->middleware('auth');
 
     Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+    Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
     Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
     Route::post('/login', [LoginController::class, 'authenticate']);
@@ -34,6 +36,8 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/', [HomeController::class, 'admin']);
     Route::get('/produk', [ProdukController::class, 'produkAdmin']);
     Route::get('/transaksi', [TransaksiController::class, 'indexAdmin']);
+    Route::post('/transaksi/konfirmasi/{id}', [TransaksiController::class, 'konfirmasiPesanan']);
+    Route::post('/transaksi/selesai/{id}', [TransaksiController::class, 'selesaikanPesanan']);
 });
 
 // Route::middleware(['auth', 'role:karyawan'])->prefix('admin')->group(function () {

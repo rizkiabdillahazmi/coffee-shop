@@ -19,12 +19,13 @@ class Invoice extends Model
 
     public static function getTransactions(int $id=null)
     {
-        $transactions;
+        $transactions = '';
         if ($id) {
-            $transactions = Invoice::orderBy('status', 'ASC')->where('user_id', $id)->get();
+            $transactions = Invoice::orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->where('user_id', $id)->get();
         } else {
             $transactions = Invoice::join('users', 'user_id', '=', 'users.id')
                             ->orderBy('status', 'ASC')
+                            ->orderBy('invoices.created_at', 'ASC')
                             ->select('users.name as nama', 'invoices.id as id', 'invoices.invoice as invoice', 'invoices.created_at as tanggal_order', 'invoices.status as status')
                             ->get();
         }
@@ -39,7 +40,7 @@ class Invoice extends Model
 
     public static function getTransactionDetails(int $id = null)
     {
-        $transaction_details;
+        $transaction_details = '';
         $temp = Invoice::join('invoices_items', 'invoices.id', '=', 'invoices_items.invoice_id')
                         ->join('products', 'invoices_items.product_id', '=', 'products.id')
                         ->select('invoices_items.invoice_id as id', 'products.nama as nama', 'products.gambar as gambar', 'jumlah', 'sub_total');
@@ -51,5 +52,20 @@ class Invoice extends Model
         }
 
         return $transaction_details;
+    }
+
+    public static function konfirmasiPesanan($id)
+    {
+        return Invoice::where('id', $id)->update([
+            'status' => 2,
+        ]);
+    }
+
+    public static function selesaikanPesanan($id)
+    {
+        return Invoice::where('id', $id)->update([
+            'status' => 3,
+        ]);
+        
     }
 }

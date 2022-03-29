@@ -2,6 +2,7 @@
 @section('content')
 <!-- MAIN -->
 <main>
+    @include('notifikasi')
     <div class="head-title">
         <div class="left">
             <h1>{{ $title }}</h1>
@@ -19,37 +20,45 @@
 
     <div class="box-info">
         <div class="w-full mx-auto flex justify-start items-center gap-24">
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
+            <div
+                class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl">{{ $order_konfirmasi }} Order</span>
                     <span class="mb-2 font-semibold">Butuh Konfirmasi</span>
                 </div>
                 <div class="p-4 bg-red-300 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
+            <div
+                class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl">{{ $order_proses }} Order</span>
                     <span class="mb-2 font-semibold">Sedang Diproses</span>
                 </div>
                 <div class="p-4 bg-yellow-300 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
+                    </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
+            <div
+                class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl">{{ $order_selesai }} Order</span>
                     <span class="mb-2 font-semibold">Selesai</span>
                 </div>
                 <div class="p-4 bg-green-300 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -124,7 +133,8 @@
                             </button>
                         </div>
                         <div class="flex gap-2 items-center">
-                            <form action="">
+                            <form action="{{ url('/admin/transaksi/konfirmasi', $transaction->id) }}" , method="POST">
+                                @csrf
                                 <button
                                     class="bg-yellow-500 py-2 px-2 rounded-md text-xs text-white font-bold flex items-center gap-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -134,7 +144,8 @@
                                     <span>Konfirmasi</span>
                                 </button>
                             </form>
-                            <form action="">
+                            <form action=" {{ url('/admin/transaksi/selesai', $transaction->id) }}" , method="POST">
+                                @csrf
                                 <button
                                     class="bg-green-600 py-2 px-5 rounded-md text-xs text-white font-bold flex items-center gap-1 bg">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"

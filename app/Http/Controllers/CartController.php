@@ -23,7 +23,7 @@ class CartController extends Controller
         $sub_total = $harga - ($harga * $diskon);
 
         // $product = Product::find($id);
-        
+
         // $cart =new Cart;
         // $cart->user_id = $user_id;
         // $cart->product_id = $id;
@@ -54,6 +54,7 @@ class CartController extends Controller
         $carts = Cart::where('user_id', $user_id)
                         ->join('users', 'carts.user_id', '=', 'users.id')
                         ->join('products', 'carts.product_id', '=', 'products.id')
+                        ->orderBy('carts.created_at', 'desc')
                         ->select('products.gambar as gambar_produk', 'products.nama as nama_produk', 'products.diskon as diskon', 'products.harga as harga', 'carts.id as id', 'jumlah', 'sub_total', 'product_id')
                         ->get();
         return view('keranjang', [

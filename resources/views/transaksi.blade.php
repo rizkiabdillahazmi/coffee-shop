@@ -4,8 +4,10 @@
 {{-- {{ dd($transaction_details) }} --}}
 <section class="max-w-full bg-stone-100 mt-[8rem] min-h-screen">
     <div class="max-w-screen-xl mx-auto">
+        @include('notifikasi')
         <span class="block text-2xl font-bold text-teal-600 mb-4">Transaksi</span>
         <div class="w-full mx-auto rounded-md overflow-hidden">
+            @if (\App\Models\Invoice::where('user_id', Auth::user()->id)->count() !== 0)
             <div
                 class="grid grid-cols-[0.2fr_repeat(3,_1fr)_0.4fr] justify-items-center items-center border-b-2 border-slate-300 uppercase px-4 py-3 bg-teal-400 font-semibold">
                 <div>
@@ -95,6 +97,19 @@
             </div>
             @endforeach
         </div>
+        @else
+        <div class="h-[30rem] flex flex-col justify-center items-center">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+            </div>
+            <div class="mt-10 text-3xl font-semibold">Ops Anda Belum Pernah Belanja, Silahkan lihat <a href="/produk"
+                    class="text-green-600 hover:text-green-500">Produk</a> untuk Berbelanja</div>
+        </div>
+        @endif
     </div>
 </section>
 

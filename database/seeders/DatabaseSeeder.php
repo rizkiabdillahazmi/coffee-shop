@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             ProductSeeder::class,
-            InvoiceSeeder::class,
+            // InvoiceSeeder::class,
         ]);
     }
 }
