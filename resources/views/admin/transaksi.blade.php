@@ -177,13 +177,13 @@
                                     <div>{{ $transaction_detail->nama }}</div>
                                 </div>
                                 <div class="w-1/4 text-center">{{ $transaction_detail->jumlah }}</div>
-                                <div>{{ $transaction_detail->sub_total }}</div>
+                                <div>@money($transaction_detail->sub_total)</div>
                             </div>
                             @endif
                             @endforeach
                             <div class="flex justify-between bg-teal-600 rounded-md mt-2 px-2 py-2 font-semibold">
                                 <div>Total</div>
-                                <div>Rp. {{ $total }}</div>
+                                <div>@money($total)</div>
                             </div>
                         </div>
                     </div>

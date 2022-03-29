@@ -10,9 +10,12 @@
     </form>
     <input type="checkbox" id="switch-mode" hidden>
     <label for="switch-mode" class="switch-mode"></label>
-    <a href="#" class="notification">
+    <a href="/admin/transaksi" class="notification">
         <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
+        @if ($transaksi = \App\Models\Invoice::where('status', 1)->count() > 0)
+        <span class="num">{{ $transaksi }}</div></span>
+        @endif
+
     </a>
     <span href="#" class="profile">
         <img src="{{ asset('img/avatar.svg') }}">
