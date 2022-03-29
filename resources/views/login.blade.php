@@ -21,11 +21,11 @@
             @csrf
             <div class="mt-4 w-96">
                 <div>
-                    <label class="block" for="email">Email<label>
-                            <input type="text" placeholder="Email" name="email" autofocus required
-                                value="{{ old('email') }}"
+                    <label class="block" for="username">Username or Email<label>
+                            <input type="text" placeholder="Username or Email" name="username" autofocus required
+                                value="{{ old('username') }}"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-green-600">
-                            @error('email')
+                            @error('username')
                             <span class="text-xs tracking-wide text-red-600">{{ $message }}</span>
                             @enderror
                 </div>
