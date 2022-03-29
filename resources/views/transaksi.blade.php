@@ -9,7 +9,7 @@
         <div class="w-full mx-auto rounded-md overflow-hidden">
             @if (\App\Models\Invoice::where('user_id', Auth::user()->id)->count() !== 0)
             <div
-                class="grid grid-cols-[0.2fr_repeat(3,_1fr)_0.4fr] justify-items-center items-center border-b-2 border-slate-300 uppercase px-4 py-3 bg-teal-400 font-semibold">
+                class="grid grid-cols-[0.2fr_repeat(3,_1fr)_0.4fr] justify-items-center items-center border-b-2 border-slate-300 uppercase px-4 py-3 text-white bg-teal-600 font-semibold">
                 <div>
                     No
                 </div>
