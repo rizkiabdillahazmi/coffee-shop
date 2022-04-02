@@ -9,10 +9,14 @@
         <span class="block text-2xl font-bold">Kategori</span>
         <div class="mt-6 flex justify-start space-x-8">
             <div class="">
-                <a href="#minuman" class="text-center text-sm font-semibold block px-12 py-6 bg-white rounded-md border-4 border-transparent hover:border-teal-500"><img src="{{ asset('img/drink.png') }}" alt="" class="w-14 h-14 mb-4 block mx-auto">Minuman</a>
+                <a href="#minuman"
+                    class="text-center text-sm font-semibold block px-12 py-6 bg-white rounded-md border-4 border-transparent hover:border-teal-500"><img
+                        src="{{ asset('img/drink.png') }}" alt="" class="w-14 h-14 mb-4 block mx-auto">Minuman</a>
             </div>
             <div class="">
-                <a href="#makanan" class="text-center text-sm font-semibold block px-12 py-6 bg-white rounded-md border-4 border-transparent hover:border-teal-500"><img src="{{ asset('img/food.png') }}" alt="" class="w-14 h-14 mb-4 block mx-auto"> Makanan</a>
+                <a href="#makanan"
+                    class="text-center text-sm font-semibold block px-12 py-6 bg-white rounded-md border-4 border-transparent hover:border-teal-500"><img
+                        src="{{ asset('img/food.png') }}" alt="" class="w-14 h-14 mb-4 block mx-auto"> Makanan</a>
             </div>
         </div>
     </div>
@@ -36,21 +40,28 @@
                                 </svg>
                             </span>
                             @if ($signature->diskon > 0)
-                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $signature->diskon*100 }} %</div>
+                            <div
+                                class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">
+                                Diskon {{ $signature->diskon * 100 }} %</div>
                             @endif
-                            <img src="{{ asset('storage/' . $signature->gambar) }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $signature->gambar) }}" alt=""
+                                class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $signature->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">@money($signature->harga-$signature->harga*$signature->diskon)</span>
+                        <span
+                            class="text-teal-600 text-lg font-bold">@money($signature->harga-$signature->harga*$signature->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $signature->id) }}" method="POST">
                                 @csrf
-                                <button class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                <button
+                                    class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                     </svg>
-                                Add Cart
+                                    Add Cart
                                 </button>
                             </form>
                         </div>
@@ -100,21 +111,27 @@
                                 </svg>
                             </span>
                             @if ($coffee->diskon > 0)
-                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $coffee->diskon*100 }} %</div>
+                            <div
+                                class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">
+                                Diskon {{ $coffee->diskon * 100 }} %</div>
                             @endif
                             <img src="{{ asset('storage/' . $coffee->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $coffee->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">@money($coffee->harga-$coffee->harga*$coffee->diskon)</span>
+                        <span
+                            class="text-teal-600 text-lg font-bold">@money($coffee->harga-$coffee->harga*$coffee->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $coffee->id) }}" method="POST">
                                 @csrf
-                                <button class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                <button
+                                    class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                     </svg>
-                                Add Cart
+                                    Add Cart
                                 </button>
                             </form>
                         </div>
@@ -141,7 +158,7 @@
             </div>
         </div>
 
-    <!-- Non Coffee -->
+        <!-- Non Coffee -->
         <span class="mt-10 block text-lg font-bold">Minuman Non-Coffee</span>
         <div class="relative mt-6">
             <div class="non-coffee">
@@ -159,21 +176,28 @@
                                 </svg>
                             </span>
                             @if ($non_coffee->diskon > 0)
-                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $non_coffee->diskon*100 }} %</div>
+                            <div
+                                class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">
+                                Diskon {{ $non_coffee->diskon * 100 }} %</div>
                             @endif
-                            <img src="{{ asset('storage/' . $non_coffee->gambar) }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $non_coffee->gambar) }}" alt=""
+                                class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $non_coffee->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">@money($non_coffee->harga-$non_coffee->harga*$non_coffee->diskon)</span>
+                        <span
+                            class="text-teal-600 text-lg font-bold">@money($non_coffee->harga-$non_coffee->harga*$non_coffee->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $non_coffee->id) }}" method="POST">
                                 @csrf
-                                <button class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                <button
+                                    class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                     </svg>
-                                Add Cart
+                                    Add Cart
                                 </button>
                             </form>
                         </div>
@@ -223,21 +247,27 @@
                                 </svg>
                             </span>
                             @if ($snack->diskon > 0)
-                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $snack->diskon*100 }} %</div>
+                            <div
+                                class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">
+                                Diskon {{ $snack->diskon * 100 }} %</div>
                             @endif
                             <img src="{{ asset('storage/' . $snack->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $snack->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">@money($snack->harga-$snack->harga*$snack->diskon)</span>
+                        <span
+                            class="text-teal-600 text-lg font-bold">@money($snack->harga-$snack->harga*$snack->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $snack->id) }}" method="POST">
                                 @csrf
-                                <button class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                <button
+                                    class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                     </svg>
-                                Add Cart
+                                    Add Cart
                                 </button>
                             </form>
                         </div>
@@ -264,7 +294,7 @@
             </div>
         </div>
 
-    <!-- Daily Food -->
+        <!-- Daily Food -->
         <span class="mt-10 block text-lg font-bold">Daily Food</span>
         <div class="relative mt-6">
             <div class="daily-food">
@@ -282,21 +312,28 @@
                                 </svg>
                             </span>
                             @if ($daily_food->diskon > 0)
-                                <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $daily_food->diskon*100 }} %</div>
+                            <div
+                                class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">
+                                Diskon {{ $daily_food->diskon * 100 }} %</div>
                             @endif
-                            <img src="{{ asset('storage/' . $daily_food->gambar) }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $daily_food->gambar) }}" alt=""
+                                class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $daily_food->nama }}</a>
-                        <span class="text-teal-600 text-lg font-bold">@money($daily_food->harga-$daily_food->harga*$daily_food->diskon)</span>
+                        <span
+                            class="text-teal-600 text-lg font-bold">@money($daily_food->harga-$daily_food->harga*$daily_food->diskon)</span>
                         <div>
                             <form action="{{ url('addcart', $daily_food->id) }}" method="POST">
                                 @csrf
-                                <button class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                <button
+                                    class="mt-4 px-3 py-2 text-xs font-bold text-white bg-green-500 rounded-lg hover:bg-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                                     </svg>
-                                Add Cart
+                                    Add Cart
                                 </button>
                             </form>
                         </div>
@@ -331,5 +368,4 @@
 <script src="{{ asset('js/glider.min.js') }}"></script>
 <script src="{{ asset('js/glider-autoplay.js') }}"></script>
 <script src="{{ asset('js/produk.js') }}"></script>
-
 @endsection
