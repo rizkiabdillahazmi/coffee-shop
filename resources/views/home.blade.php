@@ -53,7 +53,7 @@
                                 </svg>
                             </span>
                             <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $product->diskon*100 }} %</div>
-                            <img src="{{ $product->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $product->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $product->nama }}</a>

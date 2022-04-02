@@ -80,7 +80,7 @@
                         <div class="flex justify-between px-2 py-2">
                             <div class="w-2/4 flex gap-3 items-center">
                                 <img class="rounded-full border-2 border-teal-400 w-8"
-                                    src="{{ $transaction_detail->gambar }}" alt="">
+                                    src="{{ asset('storage/' . $transaction_detail->gambar) }}" alt="">
                                 <div>{{ $transaction_detail->nama }}</div>
                             </div>
                             <div class="w-1/4 text-center">{{ $transaction_detail->jumlah }}</div>

@@ -35,6 +35,8 @@ Route::prefix('/')->group(function () {
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/', [HomeController::class, 'admin']);
     Route::get('/produk', [ProdukController::class, 'produkAdmin']);
+    Route::get('/produk/add', [ProdukController::class, 'tambahProduk']);
+    Route::post('/produk/add', [ProdukController::class, 'store']);
     Route::get('/transaksi', [TransaksiController::class, 'indexAdmin']);
     Route::post('/transaksi/konfirmasi/{id}', [TransaksiController::class, 'konfirmasiPesanan']);
     Route::post('/transaksi/selesai/{id}', [TransaksiController::class, 'selesaikanPesanan']);

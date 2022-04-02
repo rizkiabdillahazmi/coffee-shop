@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -24,12 +22,25 @@ class ProdukController extends Controller
 
     public function produkAdmin()
     {
-        $products = Product::getProducts();
+        $products = Product::adminGetProducts();
         return view('admin.produk', [
             'title' => 'Produk',
             'total_product' => Product::count(),
             'discount_products' => Product::where('diskon', '!=', 0)->count(),
-            'products' => $products["all"],
+            'products' => $products,
         ]);
+    }
+
+    public function tambahProduk()
+    {
+        return view('admin.produk.add', [
+            'title' => 'Tambah Produk',
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        Product::addProduct($request);
+        return redirect('/admin/produk')->with('sukses','Produk berhasil ditambahkan');
     }
 }

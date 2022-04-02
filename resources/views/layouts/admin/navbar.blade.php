@@ -12,8 +12,8 @@
     <label for="switch-mode" class="switch-mode"></label>
     <a href="/admin/transaksi" class="notification">
         <i class='bx bxs-bell'></i>
-        @if ($transaksi = \App\Models\Invoice::where('status', 1)->count() > 0)
-        <span class="num">{{ $transaksi }}</div></span>
+        @if (\App\Models\Invoice::where('status', 1)->count() > 0)
+        <span class="num">{{ \App\Models\Invoice::where('status', 1)->count() }}</div></span>
         @endif
 
     </a>

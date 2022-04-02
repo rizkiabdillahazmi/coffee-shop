@@ -2,6 +2,7 @@
 @section('content')
 <!-- MAIN -->
 <main>
+    @include('notifikasi')
     <div class="head-title">
         <div class="left">
             <h1>{{ $title }}</h1>
@@ -48,7 +49,7 @@
         <div class="w-full mx-auto rounded-md overflow-hidden">
             <div class="px-4 py-4">
                 <div class="flex justify-end">
-                    <a href="">
+                    <a href="/admin/produk/add">
                         <div class="flex justify-center items-center gap-1 p-2 bg-teal-600 rounded-lg text-xs text-white font-bold">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -86,7 +87,7 @@
                         class="dropdown__cell grid grid-cols-[0.8fr_repeat(4,_0.5fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">
                             <img class="rounded-full w-9 h-9"
-                                src="{{ $product->gambar }}">
+                                src="{{ asset('storage/' . $product->gambar) }}">
                             <span>{{ $product->nama }}</span>
                         </div>
                         <div>
@@ -96,7 +97,8 @@
                             {{ $product->jenis }}
                         </div>
                         <div>
-                            {{ $product->harga }}
+                            @money($product->harga)
+                            {{-- {{ $product->harga }} --}}
                         </div>
                         <div>
                             {{ $product->diskon }}
@@ -125,6 +127,7 @@
                 </div>
                 @endforeach
             </div>
+            {{ $products->links() }}
         </div>
     </div>
 </main>

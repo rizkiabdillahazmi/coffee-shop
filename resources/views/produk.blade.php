@@ -38,7 +38,7 @@
                             @if ($signature->diskon > 0)
                                 <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $signature->diskon*100 }} %</div>
                             @endif
-                            <img src="{{ $signature->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $signature->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $signature->nama }}</a>
@@ -102,7 +102,7 @@
                             @if ($coffee->diskon > 0)
                                 <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $coffee->diskon*100 }} %</div>
                             @endif
-                            <img src="{{ $coffee->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $coffee->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $coffee->nama }}</a>
@@ -161,7 +161,7 @@
                             @if ($non_coffee->diskon > 0)
                                 <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $non_coffee->diskon*100 }} %</div>
                             @endif
-                            <img src="{{ $non_coffee->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $non_coffee->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $non_coffee->nama }}</a>
@@ -225,7 +225,7 @@
                             @if ($snack->diskon > 0)
                                 <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $snack->diskon*100 }} %</div>
                             @endif
-                            <img src="{{ $snack->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $snack->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $snack->nama }}</a>
@@ -284,7 +284,7 @@
                             @if ($daily_food->diskon > 0)
                                 <div class="text-white font-semibold -translate-y px-2 py-1 bg-red-500 rounded-lg absolute opacity-70">Diskon {{ $daily_food->diskon*100 }} %</div>
                             @endif
-                            <img src="{{ $daily_food->gambar }}" alt="" class="object-cover w-40 h-40">
+                            <img src="{{ asset('storage/' . $daily_food->gambar) }}" alt="" class="object-cover w-40 h-40">
                         </div>
                         <span class="text-green-500">Tersedia</span>
                         <a href="" class="font-bold text-lg text-center">{{ $daily_food->nama }}</a>
@@ -322,7 +322,7 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
 
 </section>

@@ -19,7 +19,7 @@
     </div>
 
     <div class="box-info">
-        <div class="w-full mx-auto flex justify-start items-center gap-24">
+        <div class="w-full mx-auto flex justify-start items-center gap-16">
             <div
                 class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
                 <div class="flex flex-col">
@@ -71,7 +71,7 @@
                     <h3>Recent Orders</h3>
                 </div>
                 <div
-                    class="mt-5 grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
+                    class="mt-5 grid grid-cols-[repeat(2,_0.8fr)_0.8fr_0.8fr_repeat(2,_0.3fr)] 2xl:grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center item-center border-b border-stone-200 px-4 py-3 font-bold text-sm">
                     <div>
                         User
                     </div>
@@ -94,7 +94,7 @@
                 @foreach ($transactions as $transaction)
                 <div class="dropdown__wrapper py-4 rounded">
                     <div
-                        class="dropdown__cell grid grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center items-center px-4">
+                        class="dropdown__cell grid grid-cols-[repeat(2,_0.8fr)_0.8fr_0.8fr_repeat(2,_0.3fr)] 2xl:grid-cols-[repeat(2,_0.8fr)_0.6fr_repeat(2,_0.6fr)_0.8fr] justify-items-center items-center px-4">
                         <div class="justify-self-start flex items-center gap-3">
                             <img class="rounded-full w-9 h-9 border-2 border-teal-500 md:w-6 md:h-6 md:border"
                                 src="{{ asset('img/avatar.svg') }}">
@@ -129,7 +129,7 @@
                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
                                     </path>
                                 </svg>
-                                <p>Rincian</p>
+                                <p class="hidden 2xl:block">Rincian</p>
                             </button>
                         </div>
                         <div class="flex gap-2 items-center">
@@ -141,19 +141,19 @@
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                     </svg>
-                                    <span>Konfirmasi</span>
+                                    <span class="hidden 2xl:block">Konfirmasi</span>
                                 </button>
                             </form>
                             <form action=" {{ url('/admin/transaksi/selesai', $transaction->id) }}" , method="POST">
                                 @csrf
                                 <button
-                                    class="bg-green-600 py-2 px-5 rounded-md text-xs text-white font-bold flex items-center gap-1 bg">
+                                    class="bg-green-600 py-2 px-2 2xl:px-5 rounded-md text-xs text-white font-bold flex items-center gap-1 bg">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span>Selesai</span>
+                                    <span class="hidden 2xl:block">Selesai</span>
                                 </button>
                             </form>
                         </div>
@@ -173,7 +173,7 @@
                             <div class="flex justify-between px-2 py-2">
                                 <div class="w-2/4 flex gap-3 items-center">
                                     <img class="rounded-full border-2 border-teal-400 w-8"
-                                        src="{{ $transaction_detail->gambar }}" alt="">
+                                        src="{{ asset('storage/' . $transaction_detail->gambar) }}" alt="">
                                     <div>{{ $transaction_detail->nama }}</div>
                                 </div>
                                 <div class="w-1/4 text-center">{{ $transaction_detail->jumlah }}</div>

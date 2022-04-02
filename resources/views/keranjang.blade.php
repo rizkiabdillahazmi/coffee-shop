@@ -13,7 +13,7 @@
                     @foreach ($carts as $index => $cart)
                     <div class="mb-8 flex justify-between bg-white rounded-lg">
                         <div class="w-1/3 p-5">
-                            <img src="{{ $cart->gambar_produk }}" alt="" class="rounded-md w-40 h-40">
+                            <img src="{{ asset('storage/' . $cart->gambar_produk) }}" alt="" class="rounded-md w-40 h-40">
                         </div>
                         <div class="w-2/3 p-5 flex flex-col justify-between">
                             <div>

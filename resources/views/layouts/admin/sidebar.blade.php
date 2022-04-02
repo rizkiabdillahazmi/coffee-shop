@@ -12,7 +12,7 @@
             </a>
         </li>
         @if (auth()->user()->role == 'admin')
-        <li class="{{ $title === "Produk" ? 'active' :''}}">
+        <li class="{{ $title === "Produk" || $title === "Tambah Produk" ? 'active' :''}}">
             <a href="/admin/produk">
                 <i class='bx bx-package'></i>
                 <span class="text">Produk</span>

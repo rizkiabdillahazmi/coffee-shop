@@ -18,8 +18,8 @@
     </div>
 
     <div class="box-info">
-        <div class="w-full mx-auto grid grid-cols-4 gap-16 justify-items-center items-center">
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-blue-500 shadow-lg rounded-md w-80">
+        <div class="w-full mx-auto grid grid-cols-4 justify-items-center items-center">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-blue-500 shadow-lg rounded-md max-w-xs">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl">23</span>
                     <span class="mb-2 font-semibold">Total Produk</span>
@@ -30,7 +30,7 @@
                       </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md w-80">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-yellow-500 shadow-lg rounded-md max-w-xs">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl">12</span>
                     <span class="mb-2 font-semibold">Produk Diskon</span>
@@ -41,9 +41,9 @@
                       </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md w-80">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-green-500 shadow-lg rounded-md max-w-xs">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">Rp. 1500000</span>
+                    <span class="font-bold text-lg">@money(200000)</span>
                     <span class="mb-2 font-semibold">Total Penjualan</span>
                 </div>
                 <div class="p-4 bg-green-300 rounded-lg">
@@ -52,10 +52,10 @@
                       </svg>
                 </div>
             </div>
-            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md w-80">
+            <div class="flex justify-between items-center gap-8 p-4 border-l-8 border-red-500 shadow-lg rounded-md max-w-xs">
                 <div class="flex flex-col">
-                    <span class="font-bold text-2xl">12 Order</span>
-                    <span class="mb-2 font-semibold">Butuh Konfirmasi</span>
+                    <span class="font-bold text-lg">12 Order</span>
+                    <span class="mb-2 font-semibold text-sm">Butuh Konfirmasi</span>
                 </div>
                 <div class="p-4 bg-red-300 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -72,10 +72,10 @@
             <div class="py-3 px-5 bg-gray-50">Radar chart</div>
             <canvas class="p-10" id="chartRadar"></canvas>
           </div>
-          
+
           <!-- Required chart.js -->
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-          
+
           <!-- Chart radar -->
           <script>
             const dataRadar = {
@@ -113,13 +113,13 @@
                 },
               ],
             };
-          
+
             const configRadarChart = {
               type: "radar",
               data: dataRadar,
               options: {},
             };
-          
+
             var chartBar = new Chart(
               document.getElementById("chartRadar"),
               configRadarChart
@@ -129,10 +129,10 @@
             <div class="py-3 px-5 bg-gray-50">Doughnut chart</div>
             <canvas class="p-10" id="chartDoughnut"></canvas>
           </div>
-          
+
           <!-- Required chart.js -->
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-          
+
           <!-- Chart doughnut -->
           <script>
             const dataDoughnut = {
@@ -150,13 +150,13 @@
                 },
               ],
             };
-          
+
             const configDoughnut = {
               type: "doughnut",
               data: dataDoughnut,
               options: {},
             };
-          
+
             var chartBar = new Chart(
               document.getElementById("chartDoughnut"),
               configDoughnut
