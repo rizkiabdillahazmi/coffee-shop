@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
@@ -42,5 +43,33 @@ class ProdukController extends Controller
     {
         Product::addProduct($request);
         return redirect('/admin/produk')->with('sukses','Produk berhasil ditambahkan');
+    }
+
+    public function editProduk(Request $request)
+    {
+        // dd($request->id);
+        $product = Product::getAProduct($request->id);
+        // dd(Product::getAProduct($request->id));
+        return view('admin.produk.edit', [
+            'title' => 'Edit Produk',
+            'product' => $product,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        Product::updateProduct($request);
+        return redirect('/admin/produk')->with('sukses','Produk berhasil diupdate');
+    }
+
+    public function destroy(Request $request)
+    {
+        $selectedProduct = Product::find($request->id);
+        // dd($selectedProduct->gambar);
+        if ($selectedProduct->gambar) {
+            Storage::delete($selectedProduct->gambar);
+        }
+        Product::destroy($request->id);
+        return redirect('/admin/produk')->with('sukses','Produk berhasil dihapus');
     }
 }

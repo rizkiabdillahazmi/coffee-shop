@@ -17,3 +17,17 @@ function ambilKategori(){
         document.getElementById('Non-Coffee').classList.add("hidden");
     }
 }
+
+function previewImage() {
+    const image = document.querySelector('#gambar');
+    const imgPreview =document.querySelector('.img-preview');
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent) {
+        imgPreview.classList.add('h-40');
+        imgPreview.classList.add('mb-3');
+        imgPreview.src = oFREvent.target.result;
+    }
+}

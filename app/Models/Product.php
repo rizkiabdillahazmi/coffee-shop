@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
@@ -83,5 +84,39 @@ class Product extends Model
         //     'harga' => $validatedData['harga'],
         //     'diskon' => $request->diskon,
         // ]);
+    }
+
+    public static function getAProduct($id){
+        $product = Product::find($id);
+        return $product;
+    }
+
+    public static function updateProduct($request){
+        $rules = [
+            'nama' => 'required',
+            'gambar' => 'image|file|max:512',
+            'kategori' => 'required',
+            'jenis' => 'required',
+            'signature' => 'required',
+            'harga' => 'required',
+            'diskon' => '',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        if ($request->diskon) {
+            $validatedData['diskon'] = $request->diskon;
+        } else {
+            $validatedData['diskon'] = 0;
+        }
+
+        if ($request->file('gambar')){
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['gambar'] = $request->file('gambar')->store('img/produk');
+        }
+
+        Product::where('id', $request->id)->update($validatedData);
     }
 }
